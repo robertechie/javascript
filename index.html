@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Task</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.8;
+    }
+    header{
+        padding-top: 170px;
+        background-color: #013e99;
+        height: 100vh;
+       
+       
+    }
+    .container{
+        
+        background-color: #ffff;
+        max-width:350px;
+        margin: auto;
+        padding:1rem;
+        border-radius: 5px;
+        height: auto;
+        
+        
+    }
+    .name{
+        font-weight: bolder;
+    }
+    li{list-style: none;}
+    .cla{
+        margin-top:1rem;
+        display:block;
+        font-weight: bolder;
+         
+    }
+    ul{
+        margin-bottom:1rem;
+    }
+   #lister{
+       overflow-wrap: break-word;
+   }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <label class="name">Name: </label>
+            <label id="nam"></label>
+
+            <label class="cla">Courses: </label>
+            <ul id="cou">
+
+            </ul>
+            <label id='fg' class="cla"></label>
+            <label id='lister'></label>
+        </div>
+
+
+    </header>
+
+
+
+
+    <script>
+        let flash="Eru Orosume Robert";
+        document.getElementById("nam").innerHTML = flash;
+        let cours =['Javascript','html & css','Node.js','C#','Flutter & Dart'];
+       
+ 
+        for (var i=0; i<cours.length; i++) {
+            var ul = document.getElementById("cou");
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(cours[i]));
+            ul.appendChild(li);
+        }    
+    let totalnumber=cours.length;
+    let typenumber='';
+    let numbs='';
+    if(totalnumber%2==0){
+        numbs='';
+        typenumber='Total Number of courses is '+totalnumber+' ,and it belong to Even number,find below the list of even numbers between 1-200';
+        
+  for (var i=1; i<=200; i++){
+        if(i%2===0){
+            if(i===2){
+                numbs+=i;
+            }else{
+                numbs+=','+i;
+            }
+            
+        }
+    }
+//end for
+    }else{
+        numbs='';
+        typenumber='Total Number of courses is '+totalnumber+' ,and it belong to Odd number,find below the list of odd numbers between 1-200';
+        for (var j=1; j<=200; j++){
+        if(j%2!==0){
+            if(j===1){
+                numbs+=j;
+            }else{
+                numbs+=','+j;
+            }
+        }
+    }
+
+    }
+   
+    document.getElementById("fg").innerHTML = typenumber;
+    document.getElementById("lister").innerHTML = numbs;
+    
+    
+
+    </script>
+</body>
+</html>
